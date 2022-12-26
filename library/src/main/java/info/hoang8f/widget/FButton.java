@@ -113,9 +113,9 @@ public class FButton extends Button implements View.OnTouchListener {
             if (attr == R.styleable.FButton_shadowEnabled) {
                 isShadowEnabled = typedArray.getBoolean(attr, true); //Default is true
             } else if (attr == R.styleable.FButton_buttonColor) {
-                mButtonColor = typedArray.getColor(attr, R.color.fbutton_default_color);
+                mButtonColor = typedArray.getColor(attr, context.getResources().getColor(R.color.fbutton_default_color));
             } else if (attr == R.styleable.FButton_shadowColor) {
-                mShadowColor = typedArray.getColor(attr, R.color.fbutton_default_shadow_color);
+                mShadowColor = typedArray.getColor(attr, context.getResources().getColor(R.color.fbutton_default_shadow_color));
                 isShadowColorDefined = true;
             } else if (attr == R.styleable.FButton_shadowHeight) {
                 mShadowHeight = typedArray.getDimensionPixelSize(attr, R.dimen.fbutton_default_shadow_height);

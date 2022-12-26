@@ -1,27 +1,43 @@
 apply plugin: 'android'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
+    compileSdk 33
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 19
+        minSdk 16
+        targetSdk 33
         versionCode 2
         versionName "1.1"
     }
     buildTypes {
         release {
-            runProguard false
+//            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_11
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile 'com.larswerkman:HoloColorPicker:1.4'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // test library ---------------------------------------------------------------------------
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // androidx library ---------------------------------------------------------------------------
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.material:material:1.7.0'
+
+    // third party dependencies -------------------------------------------------------------------
+
+    implementation 'com.larswerkman:HoloColorPicker:1.5'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    compile project(':library')
-    compile 'info.hoang8f:fbutton:1.0.5'
+    implementation 'info.hoang8f:fbutton:1.0.5'
 }

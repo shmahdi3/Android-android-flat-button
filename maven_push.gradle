@@ -1,4 +1,4 @@
-apply plugin: 'maven'
+/*apply plugin: 'maven'
 apply plugin: 'signing'
 
 def sonatypeRepositoryUrl
@@ -14,7 +14,7 @@ afterEvaluate { project ->
     uploadArchives {
         repositories {
             mavenDeployer {
-                beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+             //   beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 
                 pom.artifactId = POM_ARTIFACT_ID
 
@@ -79,4 +79,4 @@ afterEvaluate { project ->
         archives androidSourcesJar
         archives androidJavadocsJar
     }
-}
+}*/
